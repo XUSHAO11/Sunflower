@@ -7,24 +7,18 @@
       <!-- </transition> -->
     </router-view>
   </div>
+<div class="ScrollTop">
+  <ScrollTop/>
+</div>
 </template>
 <script setup lang="ts">
 import Header from '../components/Header.vue'
+import ScrollTop from '../components/ScrollTop.vue';
 </script>
 
 <style scoped>
-.fade-transform-leave-active,
-.fade-transform-enter-active {
-  transition: all 0.3s;
-}
-
-.fade-transform-enter {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.fade-transform-leave-to {
-  opacity: 0;
-  transform: translateX(10px);
+.ScrollTop{
+  position: fixed;
+  right: 20px;
 }
 </style>
