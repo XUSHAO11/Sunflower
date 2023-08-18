@@ -8,11 +8,10 @@
       <div class="RightList">
         <ul v-for="item in sortList" :key="item.id" @click="scroll">
           <router-link :to="item.link">
-              <li class="sortList">
-            <i :class="item.icon"></i><span>{{ item.title }}</span>
-          </li>
+            <li class="sortList">
+              <i :class="item.icon"></i><span>{{ item.title }}</span>
+            </li>
           </router-link>
-        
         </ul>
       </div>
     </div>
@@ -24,39 +23,39 @@
         </vuetyped>
       </div>
     </div>
-    <img src="../assets/img/xiangxia.svg" alt="" class="svgxiala" @click="xialaScroll"/>
+    <img src="../assets/img/xiangxia.svg" alt="" class="svgxiala" @click="xialaScroll" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
 const sortList = [
-  { id: "0", icon: "icon iconfont icon-home-c", title: "home" ,link:"/"},
-  { id: "1", icon: "icon iconfont icon-shouye", title: "about",link:"/About"},
+  { id: "0", icon: "icon iconfont icon-home-c", title: "home", link: "/" },
+  { id: "1", icon: "icon iconfont icon-shouye", title: "about", link: "/About" },
 ];
 
-const scroll = ()=>{
-      window.scrollTo({
-        top: 800,
-        behavior: "smooth",
-      });
-}
+const scroll = () => {
+  window.scrollTo({
+    top: 800,
+    behavior: "smooth",
+  });
+};
 
-const xialaScroll = ()=>{
-  scroll()
-}
+const xialaScroll = () => {
+  scroll();
+};
 </script>
 
 <style lang="scss" scoped>
 .Header {
   .svgxiala {
     position: absolute;
-    left: 47%;
+    left: 47.5%;
     transform: translate(-50%);
     bottom: 1%;
     z-index: 9999;
-   animation: firstdiv 2s linear infinite alternate;
-    
+    // animation:  2s linear infinite alternate;
+    animation: firstdiv 2s linear 1s infinite running;
   }
   .HeaderBox {
     position: fixed;
@@ -116,22 +115,20 @@ const xialaScroll = ()=>{
   }
 }
 
-@keyframes firstdiv{
-   0%{
-      transform: scale(1);
-   }
-   25%{
-      transform: scale(0.9);
-   }
-   50%{
-      transform: scale(0.8);
-   }
-   75%{
-      transform: scale(0.9);
-   }
-   100%{
-      transform: scale(1);
-   }
+@keyframes firstdiv {
+  0% {
+    transform: translateY(0%);
+   opacity: 1;
+  }
+ 
+  50% {
+    transform: translateY(5%);
+    opacity: .5;
+  }
+  
+  100% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
 }
-
 </style>

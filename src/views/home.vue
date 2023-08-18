@@ -21,6 +21,6 @@ axios.get("/api/repos/XUSHAO11/i-message/issues").then((res) => {
 
 <style lang="scss" scoped>
 #Home {
-  padding: 0 20px;
+  padding: 0 10%;
 }
 </style>
