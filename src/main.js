@@ -1,0 +1,12 @@
+import { createApp } from "vue";
+import "./style.css";
+import "./assets/main.css";
+import "./assets/fonts/font.css";
+import vuetyped from "vue3typed";
+import VueKinesis from "vue-kinesis";
+import "./assets/fonts/iconfont.css";
+import Antd from "ant-design-vue";
+// import "ant-design-vue/dist/antd.css";
+import router from "./router";
+import App from "./App.vue";
+createApp(App).use(router).use(Antd).use(vuetyped).use(VueKinesis).mount("#app");

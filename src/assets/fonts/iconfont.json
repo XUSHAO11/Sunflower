@@ -1,0 +1,23 @@
+{
+  "id": "4215896",
+  "name": "sunflower",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10075092",
+      "name": "首页",
+      "font_class": "home-c",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "32973419",
+      "name": "首页-copy",
+      "font_class": "shouye",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
