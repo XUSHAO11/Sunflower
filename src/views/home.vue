@@ -7,16 +7,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import axios from "axios";
-import { ref } from "vue";
 import Silder from '../components/Silder.vue'
 import Content from '../components/Content.vue'
-
-const num = ref();
-axios.get("/api/repos/XUSHAO11/i-message/issues").then((res) => {
-  console.log(res.data);
-  num.value = res.data;
-});
 </script>
 
 <style lang="scss" scoped>

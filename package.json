@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "ant-design-vue": "^4.0.0",
     "axios": "^1.4.0",
+    "pinia": "^2.1.6",
     "sass": "^1.65.1",
     "vue": "^3.3.4",
     "vue-kinesis": "^2.0.5",

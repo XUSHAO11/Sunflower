@@ -15,20 +15,26 @@
         </ul>
       </div>
     </div>
-    <div class="HeaderTitle">
-      <img src="../assets/img/HeaderBg.png" alt="梓旭背景图" class="HeaderBg" />
-      <div class="HeaderText">
-        <vuetyped :strings="['欢迎访问我的博客', '梓旭のBlog', '来自河南']" :loop="true" :smart-backspace="true" class="typingtext">
-          <div class="typing" />
-        </vuetyped>
+    <div v-if="router.currentRoute.value.path == '/layout/home'">
+      <div class="HeaderTitle">
+        <img src="../assets/img/HeaderBg.png" alt="梓旭背景图" class="HeaderBg" />
+        <div class="HeaderText">
+          <vuetyped :strings="['欢迎访问我的博客', '梓旭のBlog', '来自河南']" :loop="true" :smart-backspace="true" class="typingtext">
+            <div class="typing" />
+          </vuetyped>
+        </div>
       </div>
+      <img src="../assets/img/xiangxia.svg" alt="" class="svgxiala" @click="xialaScroll" />
     </div>
-    <img src="../assets/img/xiangxia.svg" alt="" class="svgxiala" @click="xialaScroll" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+
+import { useRouter } from "vue-router";
+const router = useRouter();
+
 const sortList = [
   { id: "0", icon: "icon iconfont icon-home-c", title: "home", link: "/" },
   { id: "1", icon: "icon iconfont icon-shouye", title: "about", link: "/About" },
@@ -54,7 +60,6 @@ const xialaScroll = () => {
     transform: translate(-50%);
     bottom: 1%;
     z-index: 9999;
-    // animation:  2s linear infinite alternate;
     animation: firstdiv 2s linear 1s infinite running;
   }
   .HeaderBox {
@@ -118,14 +123,14 @@ const xialaScroll = () => {
 @keyframes firstdiv {
   0% {
     transform: translateY(0%);
-   opacity: 1;
+    opacity: 1;
   }
- 
+
   50% {
     transform: translateY(5%);
-    opacity: .5;
+    opacity: 0.5;
   }
-  
+
   100% {
     transform: translateY(10%);
     opacity: 0;
