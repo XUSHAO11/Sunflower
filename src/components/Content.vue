@@ -38,8 +38,6 @@ axios.get("/api/repos/XUSHAO11/i-message/issues").then((res) => {
   counter.countPage = res.data;
 });
 const ArticlePage = (userId) => {
-  console.log(userId);
-  
   router.push({path:'/ArticlePage',query:{userIda:userId}})
 };
 </script>

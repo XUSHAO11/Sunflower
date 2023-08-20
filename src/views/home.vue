@@ -4,6 +4,8 @@
       <a-col :span="16"><Content/></a-col>
       <a-col :span="8"><Silder/></a-col>
     </a-row>
+
+    
   </div>
 </template>
 <script setup lang="ts">

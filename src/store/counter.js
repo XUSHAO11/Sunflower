@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', {
   state: () => {
-    return { countPage: 0 }
+    return { countPage }
   },
   // 也可以这样定义
   state: () => ({ countPage: '' })
