@@ -2,14 +2,14 @@
   <div class="Content">
     <div class="animate__animated animate__backInUp">
       <div v-for="item in num" :key="item">
-        <a-card hoverable  @click="ArticlePage(item.id)">
-          <template #cover >
-            <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+        <a-card hoverable @click="ArticlePage(item.id)">
+          <template #cover>
+            <div class="randomImg"></div>
           </template>
           <template #actions>
             <setting-outlined />
-            <edit-outlined  />
-            <ellipsis-outlined  />
+            <edit-outlined />
+            <ellipsis-outlined />
           </template>
           <a-card-meta :title="item.title" description="This is the description">
             <template #avatar>
@@ -31,14 +31,14 @@ const router = useRouter();
 import axios from "axios";
 const counter = useCounterStore();
 const num = ref();
-axios.get("/api/repos/XUSHAO11/i-message/issues").then((res) => {
-  console.log(res.data);
+axios.get("/api/repos/XUSHAO11/Sunflower/issues").then((res) => {
   num.value = res.data;
-  console.log(num.value);
   counter.countPage = res.data;
+  console.log(res.data);
 });
+
 const ArticlePage = (userId) => {
-  router.push({path:'/ArticlePage',query:{userIda:userId}})
+  router.push({ path: "/ArticlePage", query: { userIda: userId } });
 };
 </script>
 
@@ -54,5 +54,13 @@ const ArticlePage = (userId) => {
 :where(.css-dev-only-do-not-override-eq3tly).ant-card-hoverable {
   cursor: pointer;
   margin-bottom: 15px !important;
+}
+.randomImg {
+  height: 200px;
+  background-image: url("https://source.unsplash.com/random");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 8px;
 }
 </style>

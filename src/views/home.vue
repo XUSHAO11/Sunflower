@@ -2,7 +2,7 @@
   <div id="Home">
     <a-row>
       <a-col :span="16"><Content/></a-col>
-      <a-col :span="8"><Silder/></a-col>
+      <a-col :span="8"><div style="position: sticky;top: 100px;"><Silder/></div></a-col>
     </a-row>
 
     

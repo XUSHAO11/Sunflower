@@ -3,10 +3,6 @@
   margin: 0;
   font-family: 'ZhuZiAWan';
   box-sizing: border-box;
-  -webkit-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
-user-select:none;
 }
 body{
   width: 100%;
