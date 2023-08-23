@@ -2,10 +2,8 @@
   <div id="Home">
     <a-row>
       <a-col :span="16"><Content/></a-col>
-      <a-col :span="8"><div style="position: sticky;top: 100px;"><Silder/></div></a-col>
+      <a-col :span="8"><Silder/></a-col>
     </a-row>
-
-    
   </div>
 </template>
 <script setup lang="ts">
@@ -16,5 +14,9 @@ import Content from '../components/Content.vue'
 <style lang="scss" scoped>
 #Home {
   padding: 0 10%;
+  height: 1000px;
+}
+::-webkit-scrollbar{
+  display: none;
 }
 </style>

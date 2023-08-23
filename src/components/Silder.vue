@@ -34,6 +34,8 @@ const counter = useCounterStore();
 .Silder {
   padding: 100px 0;
   height: 100vh;
+  position: sticky;
+  top: 0;
 }
 :where(.css-dev-only-do-not-override-eq3tly).ant-card {
   background-color: #4259efdd !important;
@@ -44,8 +46,8 @@ const counter = useCounterStore();
   
 }
 .card-content {
-  position: sticky;
-  top: 100px;
+  // position: sticky;
+  // top: 100px;
   .heardCard {
  
 

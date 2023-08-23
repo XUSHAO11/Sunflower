@@ -7,9 +7,9 @@
             <div class="randomImg"></div>
           </template>
           <template #actions>
-            <setting-outlined />
-            <edit-outlined />
-            <ellipsis-outlined />
+            <qq-outlined />
+            <comment-outlined />
+            <share-alt-outlined />
           </template>
           <a-card-meta :title="item.title" description="This is the description">
             <template #avatar>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { SettingOutlined, EditOutlined, EllipsisOutlined } from "@ant-design/icons-vue";
+import { QqOutlined, ShareAltOutlined, CommentOutlined } from "@ant-design/icons-vue";
 import { ref } from "vue";
 import { useCounterStore } from "../store/counter";
 import { useRouter } from "vue-router";
@@ -36,6 +36,7 @@ axios.get("/api/repos/XUSHAO11/Sunflower/issues").then((res) => {
   counter.countPage = res.data;
   console.log(res.data);
 });
+console.log(window.scrollTo);
 
 const ArticlePage = (userId) => {
   router.push({ path: "/ArticlePage", query: { userIda: userId } });
@@ -45,7 +46,6 @@ const ArticlePage = (userId) => {
 <style lang="scss" scoped>
 .Content {
   padding: 100px 0;
-  height: 100vh;
   margin-right: 20px;
 }
 :where(.css-dev-only-do-not-override-eq3tly).ant-card .ant-card-cover > * {
@@ -62,5 +62,8 @@ const ArticlePage = (userId) => {
   background-position: center center;
   background-size: cover;
   border-radius: 8px;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 </style>

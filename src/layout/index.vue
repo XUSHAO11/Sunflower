@@ -10,10 +10,12 @@
 <div class="ScrollTop">
   <ScrollTop/>
 </div>
+<Footer/>
 </template>
 <script setup lang="ts">
 import Header from '../components/Header.vue'
 import ScrollTop from '../components/ScrollTop.vue';
+import Footer from '../views/Footer.vue';
 </script>
 
 <style scoped>
