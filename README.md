@@ -18,6 +18,6 @@ npm run dev && yarn dev
 
 
 
-## Recommended IDE Setup
+# 开发者
+<a href="https://github.com/gaokang804">https://avatars.githubusercontent.com/u/134194038?v=4<a/>
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
