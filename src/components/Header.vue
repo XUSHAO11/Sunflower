@@ -30,8 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import { KinesisContainer, KinesisElement } from "vue-kinesis";
-
 import { useRouter } from "vue-router";
 const router = useRouter();
 
