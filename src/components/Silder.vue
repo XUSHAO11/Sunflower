@@ -35,7 +35,7 @@ const counter = useCounterStore();
   padding: 100px 0;
   height: 100vh;
   position: sticky;
-  top: 0;
+  top: 0px;
 }
 :where(.css-dev-only-do-not-override-eq3tly).ant-card {
   background-color: #4259efdd !important;
