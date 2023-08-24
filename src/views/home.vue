@@ -14,7 +14,6 @@ import Content from '../components/Content.vue'
 <style lang="scss" scoped>
 #Home {
   padding: 0 10%;
-  height: 1000px;
 }
 ::-webkit-scrollbar{
   display: none;
