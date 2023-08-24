@@ -1,6 +1,6 @@
 # Sunflower
 
-# Vue 3 + Vite
+# Vue 3 + Vite + ant-design + pinia
 
 安装方式：
 
