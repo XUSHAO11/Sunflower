@@ -3,7 +3,7 @@
     <div class="HeaderBox">
       <img src="../assets/LOGO.png" alt="梓旭logo" class="zixulogo" />
       <table class="title">
-        <a href="/">梓旭</a>
+        <a href="/">SunFlower</a>
       </table>
       <div class="RightList">
         <ul v-for="item in sortList" :key="item.id" @click="scroll">
