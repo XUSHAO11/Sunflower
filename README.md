@@ -15,7 +15,10 @@ npm install && yarn
 ```js
 npm run dev && yarn dev
 ```
-
+## 采用markdown-it转换成可识别样式
+## animate.css 动画效果
+## ant-design v3组件库
+## 留言采用 Valine
 
 
 # 开发者
