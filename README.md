@@ -19,6 +19,7 @@ npm run dev && yarn dev
 
 
 # 开发者
-  <a href="https://github.com/gaokang804"></a><img src="https://avatars.githubusercontent.com/u/134194038?v=4" alt="gaokang" style="width: 50px;">
+  <a href="https://github.com/gaokang804"></a><img src="https://avatars.githubusercontent.com/u/134194038?v=4" alt="gaokang" style="width: 50px;border-radius: 100%;">
+
 
 
