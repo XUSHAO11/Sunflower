@@ -26,11 +26,13 @@
       </div>
       <img src="../assets/img/xiangxia.svg" alt="" class="svgxiala" @click="xialaScroll" />
     </div>
+    <Canvas/>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import Canvas from "./Canvas.vue";
 const router = useRouter();
 
 const sortList = [
