@@ -17,7 +17,15 @@
     </div>
     <div v-if="router.currentRoute.value.path == '/layout/home'">
       <div class="HeaderTitle">
-        <img src="../assets/img/wallhaven-zydk7v.jpg" alt="梓旭背景图" class="HeaderBg" />
+        <!-- <img src="../assets/img/wallhaven-zydk7v.jpg" alt="梓旭背景图" class="" /> -->
+        <div class="HeaderBg">
+        
+          <iframe src="../../public/text.html" ref="iframe" width="100%" height="100%" hscrolling="no"></iframe>
+
+
+        </div>
+
+
         <div class="HeaderText">
           <vuetyped :strings="['欢迎访问我的博客', '梓旭のBlog', '来自河南']" :loop="true" :smart-backspace="true" class="typingtext">
             <div class="typing" />

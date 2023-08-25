@@ -1,7 +1,7 @@
 <template>
   <div class="Content">
     <div class="animate__animated animate__backInUp">
-      <div v-for="item in num" :key="item">
+      <div v-for="item in num" :key="item" class="numLIst">
         <a-card hoverable @click="ArticlePage(item.id)">
           <template #cover>
             <div class="randomImg"></div>
@@ -47,8 +47,11 @@ const ArticlePage = (userId) => {
 .Content {
   padding: 100px 0;
   margin-right: 20px;
+  .numLIst{
+    margin-bottom: 15px;
+  }
 }
-:where(.css-dev-only-do-not-override-eq3tly).ant-card .ant-card-cover > * {
+.randomImg{
   width: 50%;
 }
 :where(.css-dev-only-do-not-override-eq3tly).ant-card-hoverable {
