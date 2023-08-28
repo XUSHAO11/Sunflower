@@ -1,8 +1,8 @@
 <template>
   <div id="Home">
     <a-row>
-      <a-col :span="16"><Content/></a-col>
-      <a-col :span="8"><Silder/></a-col>
+      <a-col :span="16" :xs="24" :sm="16"><Content/></a-col>
+      <a-col :span="8" :xs="0" :sm="8"><Silder/></a-col>
     </a-row>
   </div>
 </template>
