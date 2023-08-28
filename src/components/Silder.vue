@@ -41,6 +41,7 @@ const counter = useCounterStore();
   height: 100vh;
   position: sticky;
   top: 0px;
+  margin-left: 20px;
 }
 .card-content {
   .heardCard {

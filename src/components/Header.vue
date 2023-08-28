@@ -1,31 +1,25 @@
 <template>
   <div class="Header">
-    <div class="HeaderBox">
-      <img src="../assets/LOGO.png" alt="梓旭logo" class="zixulogo" />
-      <table class="title">
-        <a href="/">SunFlower</a>
-      </table>
-      <div class="RightList">
-        <ul v-for="item in sortList" :key="item.id" @click="scroll">
-          <router-link :to="item.link">
-            <li class="sortList">
-              <i :class="item.icon"></i><span>{{ item.title }}</span>
-            </li>
-          </router-link>
-        </ul>
-      </div>
-    </div>
+    <a-row class="HeaderBox">
+      <a-col :span="8" :xs="2" :sm="4"><img src="../assets/LOGO.png" alt="梓旭logo" class="zixulogo" /></a-col>
+      <a-col :span="8" :xs="0" :sm="4">
+        <div class="RightList">
+          <ul v-for="item in sortList" :key="item.id" @click="scroll">
+            <router-link :to="item.link">
+              <li class="sortList">
+                <i :class="item.icon"></i><span>{{ item.title }}</span>
+              </li>
+            </router-link>
+          </ul>
+        </div></a-col
+      >
+      <a-col :span="8" :xs="2" :sm="0">
+        <MenuOutlined @click="showDrawer('default')"  />
+      </a-col>
+    </a-row>
     <div v-if="router.currentRoute.value.path == '/layout/home'">
       <div class="HeaderTitle">
-        <!-- <img src="../assets/img/wallhaven-zydk7v.jpg" alt="梓旭背景图" class="" /> -->
-        <div class="HeaderBg">
-        
-          <iframe src="../../public/text.html" ref="iframe" width="100%" height="100%" hscrolling="no"></iframe>
-
-
-        </div>
-
-
+        <img src="https://api.yimian.xyz/img?type=wallpaper" alt="梓旭背景图" class="HeaderBg" />
         <div class="HeaderText">
           <vuetyped :strings="['欢迎访问我的博客', '梓旭のBlog', '来自河南']" :loop="true" :smart-backspace="true" class="typingtext">
             <div class="typing" />
@@ -34,13 +28,28 @@
       </div>
       <img src="../assets/img/xiangxia.svg" alt="" class="svgxiala" @click="xialaScroll" />
     </div>
-    <Canvas/>
+    <Canvas />
+    <!-- 侧栏弹窗 -->
+    <a-drawer title="Basic Drawer" :size="size" :open="open" @close="onClose">
+  
+      <ul v-for="item in sortList" :key="item.id" @click="scroll">
+            <router-link :to="item.link" @click="Onclose">
+              <li class="sortList">
+                <i :class="item.icon"></i><span>{{ item.title }}</span>
+              </li>
+            </router-link>
+          </ul>
+  </a-drawer>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import Canvas from "./Canvas.vue";
+import { MenuOutlined } from "@ant-design/icons-vue";
+
+const open = ref<boolean>(false);
 const router = useRouter();
 
 const sortList = [
@@ -58,10 +67,25 @@ const scroll = () => {
 const xialaScroll = () => {
   scroll();
 };
+
+const size = ref('default');
+
+const showDrawer = (val) => {
+  size.value = val;
+  open.value = true;
+};
+
+const onClose = () => {
+  open.value = false;
+};
+const Onclose = () => {
+  open.value = false;
+};
 </script>
 
 <style lang="scss" scoped>
 .Header {
+  position: relative;
   .svgxiala {
     position: absolute;
     left: 47.5%;
@@ -82,12 +106,7 @@ const xialaScroll = () => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 99999;
-    .title {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-    }
+    z-index: 999;
     .zixulogo {
       width: 30px;
     }
@@ -127,7 +146,6 @@ const xialaScroll = () => {
     }
   }
 }
-
 @keyframes firstdiv {
   0% {
     transform: translateY(0%);

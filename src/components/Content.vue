@@ -46,7 +46,7 @@ const ArticlePage = (userId) => {
 <style lang="scss" scoped>
 .Content {
   padding: 100px 0;
-  margin-right: 20px;
+  width: 100%;
   .numLIst{
     margin-bottom: 15px;
   }
