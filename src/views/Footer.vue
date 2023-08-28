@@ -1,11 +1,11 @@
 <template>
 <div>
     <div class="footer_icon">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
+      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
+      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
+      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
+      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
+      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
     </div>   
     <div class="footer_text">
       <div class="footer_textbox">
