@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="footer_icon">
-      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
-      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
-      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
-      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
-      <div><i class="iconfont icon-home-c" style="font-size: 50px;"></i></div>
+      <div><span class="iconfont icon-github hover_box" style="padding-left: 1px ;"></span></div>
+      <div><span class="iconfont icon-youjian hover_box" ></span></div>
+      <div><span  style="font-size: 12px;">ZiXu</span></div>
+      <div><span class="iconfont icon-yinyue hover_box" ></span></div>
+      <div><span class="iconfont icon-bilibili hover_box" ></span></div>
     </div>   
     <div class="footer_text">
       <div class="footer_textbox">
@@ -33,7 +33,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <style lang="scss" scoped>
 .Footer {
@@ -54,9 +55,25 @@
   padding: 0 38%;
   justify-content: space-evenly;
   div {
-    width: 50px;
-    height: 50px;
-    border: 1px solid red;
+    width: 32px;
+    height: 32px;
+    // border: 1px solid red;
+   
+    span{
+      color: #ffffff;
+      font-size: 19px;
+      text-align: center;
+      // padding-left:20%;
+      border-radius: 50px;
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      display:inline-block;   
+      line-height: 32px;
+    }
+  }
+  .hover_box:hover{
+    background:#425aef;
   }
 }
 .footer_text {
@@ -72,7 +89,7 @@
   .footer_textbox {
     min-width: 120px;
     h3 {
-      color: var(--heo-secondtext);
+      color: #3C3C4399;
       font-size: 1rem;
       position: relative;
       font-weight: 700;
