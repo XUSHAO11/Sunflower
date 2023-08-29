@@ -86,8 +86,10 @@
   margin: 1rem auto 3rem;
   padding: 0 1rem;
   box-sizing: border-box;
+ 
   .footer_textbox {
-    min-width: 120px;
+    min-width: 120px;   
+    text-align: center; 
     h3 {
       color: #3C3C4399;
       font-size: 1rem;
@@ -102,7 +104,7 @@
         font-size: 0.8rem;
         line-height: 0.8rem;
         color: var(--heo-fontcolor);
-        margin: 0.38rem auto 0.38rem 0;
+        margin: 0.38rem 0 0.38rem 0;
         overflow: visible;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -115,6 +117,11 @@
         -webkit-user-drag: none;
       }
     }
+  }
+}
+@media (max-width: 667px) {
+  .footer_icon {
+    padding: 0;
   }
 }
 </style>
