@@ -19,7 +19,8 @@
     </a-row>
     <div v-if="router.currentRoute.value.path == '/layout/home'">
       <div class="HeaderTitle">
-        <img src="https://api.yimian.xyz/img?type=wallpaper" alt="梓旭背景图" class="HeaderBg" />
+        <!-- <img src="https://api.yimian.xyz/img?type=wallpaper" alt="梓旭背景图" class="HeaderBg" /> -->
+        <iframe src="/text.html" frameborder="0" class="HeaderBg"></iframe>
         <div class="HeaderText">
           <vuetyped :strings="['欢迎访问我的博客', '梓旭のBlog', '来自河南']" :loop="true" :smart-backspace="true" class="typingtext">
             <div class="typing" />
@@ -91,7 +92,7 @@ const Onclose = () => {
     left: 47.5%;
     transform: translate(-50%);
     bottom: 1%;
-    z-index: 9999;
+    z-index: 999;
     animation: firstdiv 2s linear 1s infinite running;
   }
   .HeaderBox {
