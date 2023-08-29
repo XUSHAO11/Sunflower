@@ -25,6 +25,7 @@
       <div class="copyright">
         ©2021 - 2023 By
         <a href="/" rel="external nofollow" data-pjax-state="">梓旭</a>
+        <!-- <span>&万能青年</span> -->
         <a href="https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next" rel="external nofollow" target="_blank"> Theme By SunFlower-ZiXu</a>
         <a href="" rel="external nofollow" target="_blank"></a>
       </div>
@@ -49,6 +50,7 @@
   font-size: 12px;
   position: sticky;
   bottom: 0;
+  font-size: 14px;
 }
 .footer_icon {
   display: flex;
@@ -71,6 +73,9 @@
       display:inline-block;   
       line-height: 32px;
     }
+  }
+  .hover_box{
+    transition: all .3s;
   }
   .hover_box:hover{
     background:#425aef;
