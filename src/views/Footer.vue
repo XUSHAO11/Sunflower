@@ -48,8 +48,8 @@
   align-items: center;
   justify-content: space-between;
   font-size: 12px;
-  position: sticky;
-  bottom: 0;
+  // position: sticky;
+  // bottom: 0;
   font-size: 14px;
 }
 .footer_icon {

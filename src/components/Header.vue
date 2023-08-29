@@ -82,6 +82,30 @@ const onClose = () => {
 const Onclose = () => {
   open.value = false;
 };
+
+window.addEventListener('scroll', () => {
+const windowWidth = window.innerWidth;
+if (windowWidth > 667) {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  if (scrollTop >= 900) {
+    const headerBox = document.querySelector('.HeaderBox') as HTMLElement;
+    const headerBoxRight = document.querySelector('.ant-col-xs-0') as HTMLElement;
+    headerBox.style.width = '26%';  
+    headerBox.style.left = '77.2%';  
+    headerBox.style.background = 'rgba(255, 255, 255, 1)'
+    headerBox.style.boxShadow = ' 0 2px 4px rgba(0, 0, 0, 0.3)'
+    headerBoxRight.style.maxWidth = '40%'
+  }else if(scrollTop <= 900){
+    const headerBox = document.querySelector('.HeaderBox') as HTMLElement;
+    const headerBoxRight = document.querySelector('.ant-col-xs-0') as HTMLElement;
+    headerBox.style.width = '80%';  
+    headerBox.style.left = '50%';  
+    headerBox.style.background = 'rgba(255, 255, 255, 0.8)' 
+    headerBox.style.boxShadow = '0 0 0'
+    // headerBoxRight.style.maxWidth = '16.6%'
+  }
+}
+});
 </script>
 
 <style lang="scss" scoped>
@@ -93,7 +117,7 @@ const Onclose = () => {
     transform: translate(-50%);
     bottom: 1%;
     z-index: 999;
-    animation: firstdiv 2s linear 1s infinite running;
+    animation: firstdiv 2s linear 1s infinite running;  
   }
   .HeaderBox {
     position: fixed;
@@ -108,6 +132,7 @@ const Onclose = () => {
     align-items: center;
     justify-content: space-between;
     z-index: 999;
+    transition: all .7s;
     .zixulogo {
       width: 30px;
     }
