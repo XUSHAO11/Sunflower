@@ -21,6 +21,11 @@ const routes = [
         name: "ArticlePage",
         component: () => import("../views/ArticlePage.vue"),
       },
+      {
+        path: "/Link",
+        name: "link",
+        component: () => import("../views/link.vue"),
+      },
     ],
     
   },

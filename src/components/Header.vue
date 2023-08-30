@@ -1,22 +1,20 @@
 <template>
   <div class="Header">
-    <a-row class="HeaderBox">
-      <a-col :span="8" :xs="2" :sm="4"><img src="../assets/LOGO.png" alt="梓旭logo" class="zixulogo" /></a-col>
-      <a-col :span="8" :xs="0" :sm="4">
-        <div class="RightList">
-          <ul v-for="item in sortList" :key="item.id" @click="scroll">
-            <router-link :to="item.link">
-              <li class="sortList">
-                <i :class="item.icon"></i><span>{{ item.title }}</span>
-              </li>
-            </router-link>
-          </ul>
-        </div></a-col
-      >
-      <a-col :span="8" :xs="2" :sm="0">
-        <MenuOutlined @click="showDrawer('default')"  />
-      </a-col>
-    </a-row>
+    <div class="HeaderBox">
+      <img src="../assets/LOGO.png" alt="梓旭logo" class="zixulogo" />
+      <div class="RightList" v-if="headerWidth >= 750">
+        <ul v-for="item in sortList" :key="item.id" @click="scroll">
+          <router-link :to="item.link">
+            <li class="sortList">
+              <i :class="item.icon"></i><span>{{ item.title }}</span>
+            </li>
+          </router-link>
+        </ul>
+      </div>
+      <div v-if="headerWidth <= 750">
+        <MenuOutlined @click="showDrawer('default')" />
+      </div>
+    </div>
     <div v-if="router.currentRoute.value.path == '/layout/home'">
       <div class="HeaderTitle">
         <!-- <img src="https://api.yimian.xyz/img?type=wallpaper" alt="梓旭背景图" class="HeaderBg" /> -->
@@ -32,30 +30,30 @@
     <Canvas />
     <!-- 侧栏弹窗 -->
     <a-drawer title="Basic Drawer" :size="size" :open="open" @close="onClose">
-  
       <ul v-for="item in sortList" :key="item.id" @click="scroll">
-            <router-link :to="item.link" @click="Onclose">
-              <li class="sortList">
-                <i :class="item.icon"></i><span>{{ item.title }}</span>
-              </li>
-            </router-link>
-          </ul>
-  </a-drawer>
+        <router-link :to="item.link" @click="Onclose">
+          <li class="sortList">
+            <i :class="item.icon"></i><span>{{ item.title }}</span>
+          </li>
+        </router-link>
+      </ul>
+    </a-drawer>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import Canvas from "./Canvas.vue";
 import { MenuOutlined } from "@ant-design/icons-vue";
 
 const open = ref<boolean>(false);
 const router = useRouter();
-
+const headerWidth = ref(751);
 const sortList = [
   { id: "0", icon: "icon iconfont icon-home-c", title: "home", link: "/" },
   { id: "1", icon: "icon iconfont icon-shouye", title: "about", link: "/About" },
+  { id: "2", icon: "icon iconfont icon-link", title: "link", link: "/Link" },
 ];
 
 const scroll = () => {
@@ -69,7 +67,7 @@ const xialaScroll = () => {
   scroll();
 };
 
-const size = ref('default');
+const size = ref("default");
 
 const showDrawer = (val) => {
   size.value = val;
@@ -82,30 +80,33 @@ const onClose = () => {
 const Onclose = () => {
   open.value = false;
 };
-
-window.addEventListener('scroll', () => {
-const windowWidth = window.innerWidth;
-if (windowWidth > 667) {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  if (scrollTop >= 900) {
-    const headerBox = document.querySelector('.HeaderBox') as HTMLElement;
-    const headerBoxRight = document.querySelector('.ant-col-xs-0') as HTMLElement;
-    headerBox.style.width = '26%';  
-    headerBox.style.left = '77.2%';  
-    headerBox.style.background = 'rgba(255, 255, 255, 1)'
-    headerBox.style.boxShadow = ' 0 2px 4px rgba(0, 0, 0, 0.3)'
-    headerBoxRight.style.maxWidth = '40%'
-  }else if(scrollTop <= 900){
-    const headerBox = document.querySelector('.HeaderBox') as HTMLElement;
-    const headerBoxRight = document.querySelector('.ant-col-xs-0') as HTMLElement;
-    headerBox.style.width = '80%';  
-    headerBox.style.left = '50%';  
-    headerBox.style.background = 'rgba(255, 255, 255, 0.8)' 
-    headerBox.style.boxShadow = '0 0 0'
-    // headerBoxRight.style.maxWidth = '16.6%'
-  }
-}
+onMounted(() => {
+  window.onresize = function () {
+    headerWidth.value = window.innerWidth;
+  };
 });
+window.addEventListener("scroll", () => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth > 667) {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= 900) {
+        const headerBox = document.querySelector(".HeaderBox") as HTMLElement;
+        const headerBoxRight = document.querySelector(".ant-col-xs-0") as HTMLElement;
+        headerBox.style.width = "26%";
+        headerBox.style.left = "77.2%";
+        headerBox.style.background = "rgba(255, 255, 255, 1)";
+        headerBox.style.boxShadow = " 0 2px 4px rgba(0, 0, 0, 0.3)";
+        headerBoxRight.style.maxWidth = "40%";
+      } else if (scrollTop <= 900) {
+        const headerBox = document.querySelector(".HeaderBox") as HTMLElement;
+        const headerBoxRight = document.querySelector(".ant-col-xs-0") as HTMLElement;
+        headerBox.style.width = "80%";
+        headerBox.style.left = "50%";
+        headerBox.style.background = "rgba(255, 255, 255, 0.8)";
+        headerBox.style.boxShadow = "0 0 0";
+      }
+    }
+  });
 </script>
 
 <style lang="scss" scoped>
@@ -117,7 +118,7 @@ if (windowWidth > 667) {
     transform: translate(-50%);
     bottom: 1%;
     z-index: 999;
-    animation: firstdiv 2s linear 1s infinite running;  
+    animation: firstdiv 2s linear 1s infinite running;
   }
   .HeaderBox {
     position: fixed;
@@ -132,7 +133,7 @@ if (windowWidth > 667) {
     align-items: center;
     justify-content: space-between;
     z-index: 999;
-    transition: all .7s;
+    transition: all 0.7s;
     .zixulogo {
       width: 30px;
     }

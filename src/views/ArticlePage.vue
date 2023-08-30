@@ -19,7 +19,7 @@ const countPage = ref();
 const ArticlePageBody = ref();
 
 countPage.value = counter.countPage;
-countPage.value.forEach((i) => {
+countPage.value!.forEach((i) => {
   if (i.id == route.query.userIda) {
     ArticlePageBody.value = i.body;
   }
