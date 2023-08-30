@@ -16,14 +16,14 @@
         </div>
 
         <a-divider dashed class="adivider" />
-        <a-list size="small" bordered :data-source="counter.countPage" class="listSty">
-          <template #renderItem="{ item }">
-            <a-list-item class="listSty"><caret-right-filled />{{ item.title }}</a-list-item>
-          </template>
-          <template #header>
-            <div>近期文章</div>
-          </template>
-        </a-list>
+        <div >
+          <a-list size="small" bordered class="listSty">
+            <a-list-item v-for="itema in counter.countPage" :key="itema.id" class="listSty"><caret-right-filled />{{ itema.title }}</a-list-item>
+            <template #header>
+              <div>近期文章</div>
+            </template>
+          </a-list>
+        </div>
       </a-card>
     </div>
   </div>

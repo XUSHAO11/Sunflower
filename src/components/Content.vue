@@ -3,9 +3,8 @@
     <div class="animate__animated animate__backInUp">
       <div v-for="item in num" :key="item" class="numLIst">
         <a-card hoverable @click="ArticlePage(item.id)">
-          <template #cover>
-            <div class="randomImg"></div>
-          </template>
+          <!-- <div class="randomImg"></div> -->
+          <img alt="example" src="https://source.unsplash.com/random" class="randomImg"/>
           <template #actions>
             <qq-outlined />
             <comment-outlined />
@@ -19,11 +18,11 @@
         </a-card>
       </div>
     </div>
-    <Cs/>
+    <Cs />
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { QqOutlined, ShareAltOutlined, CommentOutlined } from "@ant-design/icons-vue";
 import { ref } from "vue";
 import { useCounterStore } from "../store/counter";
@@ -35,10 +34,7 @@ const num = ref();
 axios.get("/api/repos/XUSHAO11/Sunflower/issues").then((res) => {
   num.value = res.data;
   counter.countPage = res.data;
-  console.log(res.data);
 });
-console.log(window.scrollTo);
-
 const ArticlePage = (userId) => {
   router.push({ path: "/ArticlePage", query: { userIda: userId } });
 };
@@ -48,12 +44,13 @@ const ArticlePage = (userId) => {
 .Content {
   padding: 100px 0;
   width: 100%;
-  .numLIst{
+  .numLIst {
     margin-bottom: 15px;
   }
 }
-.randomImg{
+.randomImg {
   width: 50%;
+  margin-bottom: 20px;
 }
 :where(.css-dev-only-do-not-override-eq3tly).ant-card-hoverable {
   cursor: pointer;

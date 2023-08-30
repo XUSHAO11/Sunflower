@@ -55,7 +55,6 @@ const sortList = [
   { id: "1", icon: "icon iconfont icon-shouye", title: "about", link: "/About" },
   { id: "2", icon: "icon iconfont icon-link", title: "link", link: "/Link" },
 ];
-
 const scroll = () => {
   window.scrollTo({
     top: 800,
