@@ -1,5 +1,7 @@
 # Sunflower
 
+https://thvsefr.com/img/314b86f9285b5803466644ba1dd5433c.jpeg
+
 # Vue 3 + Vite + ant-design + pinia
 
 安装方式：
