@@ -1,6 +1,7 @@
 # Sunflower
 
-https://thvsefr.com/img/314b86f9285b5803466644ba1dd5433c.jpeg
+<img src="https://thvsefr.com/img/314b86f9285b5803466644ba1dd5433c.jpeg" alt="yangshaoxu" style="width: 100%;height:100%;">
+
 
 # Vue 3 + Vite + ant-design + pinia
 
